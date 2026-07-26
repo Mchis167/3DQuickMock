@@ -1,0 +1,22 @@
+.env
+.env.local
+
+node_modules/
+dist/
+coverage/
+out/
+
+# Asset gốc tải về và output render — nặng, không commit
+assets/raw/
+renders/
+!renders/_reference/
+*.blend1
+__pycache__/
+cache/
+
+# Tài liệu nội bộ & logs
+ProductDocs/
+SessionLogs/
+AGENTS.md
+.claude/
+

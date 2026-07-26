@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "device": "iphone-17-pro-max",
+  "screen": "assets/test/uv_test.png",
+  "render": {
+    "engine": "cycles",
+    "samples": 48,
+    "res": [1080, 1440],
+    "fps": 30,
+    "duration": 5.0
+  },
+  "world": { "hdri": "assets/hdri/studio_small_03.hdr", "strength": 0.6, "rotation": 0.0 },
+  "camera": { "azimuth": 0, "elevation": 10, "frame_fill": 0.72, "focal": 85 },
+  "output": { "dir": "renders/smoke", "name": "still" },
+  "channels": {
+    "device.spin_z": {
+      "keyframes": [
+        { "frame": 1, "value": 0.0, "interpolation": "LINEAR" },
+        { "frame": 151, "value": 360.0, "interpolation": "LINEAR" }
+      ],
+      "extrapolation": "LINEAR"
+    }
+  }
+}

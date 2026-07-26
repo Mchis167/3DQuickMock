@@ -1,0 +1,210 @@
+{
+  "_comment": "strength đã hiệu chuẩn để mọi preset cho độ phơi sáng tương đương (studio_small_03 @ 0.6 làm mốc). Đổi môi trường sẽ không làm nhảy độ sáng. Chạy lại scripts/calibrate_env.py sau khi thêm HDRI mới.",
+  "reference": {
+    "id": "studio_small_03",
+    "strength": 0.6,
+    "luminance": 165.63
+  },
+  "presets": [
+    {
+      "id": "alps_field_1k",
+      "label": "Alps Field",
+      "description": "Bright natural light, warm sunny valley",
+      "hdri": "assets/hdri/alps_field_1k.hdr",
+      "strength": 1.884,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/alps_field_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "autumn_park_1k",
+      "label": "Autumn Park",
+      "description": "Warm golden tones, soft lighting reflections",
+      "hdri": "assets/hdri/autumn_park_1k.hdr",
+      "strength": 1.379,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/autumn_park_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "brown_photostudio_02",
+      "label": "Photo Studio with Plants",
+      "description": "Cluttered background, recommended for lighting only",
+      "hdri": "assets/hdri/brown_photostudio_02.hdr",
+      "strength": 1.055,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/brown_photostudio_02.png",
+      "builtin": true
+    },
+    {
+      "id": "garage_1k",
+      "label": "Indoor Garage",
+      "description": "Indoor garage lighting, wide tube light reflections",
+      "hdri": "assets/hdri/garage_1k.hdr",
+      "strength": 5.739,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/garage_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "industrial_pipe_and_valve_01_1k",
+      "label": "Industrial Machine Room",
+      "description": "Strong metallic reflections, high contrast, deep shadows",
+      "hdri": "assets/hdri/industrial_pipe_and_valve_01_1k.hdr",
+      "strength": 5.739,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/industrial_pipe_and_valve_01_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "kloofendal_48d_partly_cloudy_puresky",
+      "label": "Noon Sky",
+      "description": "Harsh outdoor light, sharp shadows",
+      "hdri": "assets/hdri/kloofendal_48d_partly_cloudy_puresky.hdr",
+      "strength": 1.103,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/kloofendal_48d_partly_cloudy_puresky.png",
+      "builtin": true
+    },
+    {
+      "id": "lakeside_1k",
+      "label": "Lakeside",
+      "description": "Cool outdoor light, soft blue reflections",
+      "hdri": "assets/hdri/lakeside_1k.hdr",
+      "strength": 1.206,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/lakeside_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "leadenhall_market_1k",
+      "label": "Leadenhall Market",
+      "description": "Historic dome architecture, intricate lighting reflections",
+      "hdri": "assets/hdri/leadenhall_market_1k.hdr",
+      "strength": 5.739,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/leadenhall_market_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "modern_buildings_1k",
+      "label": "Modern Urban",
+      "description": "Light between glass buildings, sharp angular reflections",
+      "hdri": "assets/hdri/modern_buildings_1k.hdr",
+      "strength": 0.965,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/modern_buildings_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "museum_of_ethnography_1k",
+      "label": "Museum Hall",
+      "description": "Spacious indoor setting, distant window light source",
+      "hdri": "assets/hdri/museum_of_ethnography_1k.hdr",
+      "strength": 5.739,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/museum_of_ethnography_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "overcast_soil_1k",
+      "label": "Overcast Sky",
+      "description": "Evenly diffused light, ultra-soft shadows",
+      "hdri": "assets/hdri/overcast_soil_1k.hdr",
+      "strength": 2.813,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/overcast_soil_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "photo_studio_loft_hall",
+      "label": "Loft Hall Window",
+      "description": "Strong directional light with warm tones",
+      "hdri": "assets/hdri/photo_studio_loft_hall.hdr",
+      "strength": 0.517,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/photo_studio_loft_hall.png",
+      "builtin": true
+    },
+    {
+      "id": "royal_esplanade_1k",
+      "label": "Royal Esplanade",
+      "description": "Elegant outdoor light, classic architectural reflections",
+      "hdri": "assets/hdri/royal_esplanade_1k.hdr",
+      "strength": 5.739,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/royal_esplanade_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "shanghai_bund_1k",
+      "label": "Shanghai Bund Night",
+      "description": "Vibrant city night lights, colorful neon reflections",
+      "hdri": "assets/hdri/shanghai_bund_1k.hdr",
+      "strength": 5.02,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/shanghai_bund_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "small_empty_room_1",
+      "label": "Empty Room",
+      "description": "Neutral, soft wall reflections",
+      "hdri": "assets/hdri/small_empty_room_1.hdr",
+      "strength": 0.473,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/small_empty_room_1.png",
+      "builtin": true
+    },
+    {
+      "id": "snowy_park_01_1k",
+      "label": "Snowy Park",
+      "description": "Cool outdoor tones, soft and bright light",
+      "hdri": "assets/hdri/snowy_park_01_1k.hdr",
+      "strength": 0.541,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/snowy_park_01_1k.png",
+      "builtin": true
+    },
+    {
+      "id": "studio_small_03",
+      "label": "Contrast Studio",
+      "description": "Structured highlights, best for metallic reflections",
+      "hdri": "assets/hdri/studio_small_03.hdr",
+      "strength": 0.6,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/studio_small_03.png",
+      "builtin": true
+    },
+    {
+      "id": "studio_small_08",
+      "label": "Soft Studio",
+      "description": "Low contrast, even lighting, safe for all angles",
+      "hdri": "assets/hdri/studio_small_08.hdr",
+      "strength": 1.206,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/studio_small_08.png",
+      "builtin": true
+    },
+    {
+      "id": "studio_small_09",
+      "label": "Warm Studio",
+      "description": "Warm yellow tones, incandescent lamp feel",
+      "hdri": "assets/hdri/studio_small_09.hdr",
+      "strength": 2.354,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/studio_small_09.png",
+      "builtin": true
+    },
+    {
+      "id": "venice_sunset",
+      "label": "Venice Sunset",
+      "description": "Warm outdoor light, moderate contrast",
+      "hdri": "assets/hdri/venice_sunset.hdr",
+      "strength": 1.379,
+      "rotation": 0.0,
+      "thumbnail": "assets/hdri/thumbs/venice_sunset.png",
+      "builtin": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "size": 97,
+  "logMin": -12.0,
+  "logRange": 22.0,
+  "layout": "b-major, then g, then r; RGB half",
+  "blender": "4.5.1 LTS",
+  "ocioSha256": "aa4142b29b5a472aa5cb895020aa8cb673c95a31660eeee451f8a820694d3b16"
+}

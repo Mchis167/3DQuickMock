@@ -1,0 +1,14 @@
+{
+  "screen": "a.png",
+  "world": { "hdri": "h.hdr" },
+  "output": { "dir": "renders/smoke" },
+  "render": { "duration": 5 },
+  "channels": {
+    "device.spin_z": {
+      "keyframes": [
+        { "frame": 60, "value": 180 },
+        { "frame": 1, "value": 0 }
+      ]
+    }
+  }
+}

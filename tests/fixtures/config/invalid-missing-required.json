@@ -1,0 +1,4 @@
+{
+  "world": { "hdri": "assets/hdri/studio_small_03.hdr" },
+  "output": { "dir": "renders/smoke" }
+}

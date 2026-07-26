@@ -1,0 +1,5 @@
+{
+  "screen": "a.png",
+  "world": { "hdri": "h.hdr", "strenght": 0.6 },
+  "output": { "dir": "renders/smoke" }
+}

@@ -1,0 +1,6 @@
+{
+  "screen": "a.png",
+  "world": { "hdri": "h.hdr" },
+  "output": { "dir": "renders/smoke" },
+  "camera": { "frame_fill": 0 }
+}

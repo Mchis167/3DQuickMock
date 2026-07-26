@@ -1,0 +1,13 @@
+node_modules
+dist
+coverage
+out
+renders
+assets
+pnpm-lock.yaml
+*.blend
+ProductDocs
+configs
+schema/scene-config.schema.json
+SessionLogs
+AGENTS.md

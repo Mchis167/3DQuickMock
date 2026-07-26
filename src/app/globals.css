@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+
+/* IBM Plex nạp từ node_modules, không qua CDN: công cụ này phải chạy được offline. */
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/*
+ * Đổi theme = đổi khối này, không sửa component. (Architecture.md §4)
+ *
+ * Ngôn ngữ thiết kế: kỷ luật của IBM Carbon (góc vuông, dải Gray 100, IBM Plex, focus
+ * 2px, grid 8px) nhưng MẬT ĐỘ của công cụ 3D — dòng 26px thay vì field 40px của Carbon.
+ * Carbon sinh ra cho form doanh nghiệp; giữ nguyên mật độ đó thì panel còn cao hơn cũ.
+ *
+ * Ba tầng: (1) nguyên thuỷ shadcn, (2) token nghiệp vụ, (3) biến cục bộ trong component.
+ */
+@theme inline {
+  /* ---- Tầng 1: nguyên thuỷ, ánh xạ sang dải Gray 100 của Carbon nhưng tối hơn ---- */
+  /* Nền tối sâu gần như đen, để ảnh preview là thứ sáng nhất trên màn hình. */
+  --color-background: #0c0c0c;
+  --color-foreground: #f4f4f4;
+  /* layer-01: panel, thanh công cụ. Cao hơn nền đúng một bậc. */
+  --color-card: #161616;
+  --color-card-foreground: #f4f4f4;
+  --color-popover: #161616;
+  --color-popover-foreground: #f4f4f4;
+  /* Blue 60 — màu tương tác DUY NHẤT của Carbon. Không thêm màu nhấn thứ hai. */
+  --color-primary: #0f62fe;
+  --color-primary-foreground: #ffffff;
+  /* layer-02 / layer-03: hover và phần tử đang được chọn. */
+  --color-secondary: #262626;
+  --color-secondary-foreground: #f4f4f4;
+  --color-muted: #262626;
+  /* text-helper của Carbon — bậc chữ mờ cho nhãn và số phụ. */
+  --color-muted-foreground: #8d8d8d;
+  --color-accent: #262626;
+  --color-accent-foreground: #f4f4f4;
+  /* Red 60 */
+  --color-destructive: #da1e28;
+  --color-destructive-foreground: #ffffff;
+  /* border-subtle-01 / field-01 */
+  --color-border: #262626;
+  --color-input: #161616;
+  --color-ring: #0f62fe;
+
+  /*
+   * Carbon là hệ VUÔNG. Không phải lựa chọn thẩm mỹ tuỳ ý: góc bo chính là thứ làm UI
+   * này trước Pha 4.5 trông như web app chứ không như công cụ.
+   */
+  --radius: 0px;
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  /* Tên font phải là literal: `@theme inline` phân giải lúc parse, nên
+     `var(--font-sans)` tự tham chiếu vòng và font sẽ không nạp. */
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* ---- Tầng 2: token nghiệp vụ ---- */
+
+  /*
+   * Bậc chữ. Tồn tại vì thiếu nó thì cỡ chữ trôi vào component dưới dạng giá trị tuỳ ý:
+   * trước Pha 4.5 có 20 chỗ viết `text-[10px]`/`text-[11px]` rải rác, và tuyên bố "đổi
+   * theme = đổi khối token" khi đó SAI với typography.
+   *
+   * Năm bậc, không hơn. Thêm bậc thứ sáu là dấu hiệu đang trang trí, không phải phân cấp.
+   */
+  --text-label: 0.6875rem; /* 11px — nhãn control */
+  --text-label--line-height: 1rem;
+  --text-value: 0.6875rem; /* 11px — số; luôn đi kèm font mono */
+  --text-value--line-height: 1rem;
+  --text-section: 0.6875rem; /* 11px semibold — tiêu đề mục trong panel */
+  --text-section--line-height: 1rem;
+  --text-helper: 0.625rem; /* 10px — chú thích, cảnh báo */
+  --text-helper--line-height: 0.875rem;
+  --text-ui: 0.75rem; /* 12px — nút, tab, chữ giao diện chung */
+  --text-ui--line-height: 1rem;
+
+  /* Mật độ. 26px là mật độ Blender/Figma, không phải field 40px của Carbon. */
+  --spacing-row: 1.625rem; /* 26px — một dòng control */
+  --spacing-control: 1.5rem; /* 24px — nút nhỏ, segmented */
+  --spacing-header: 2rem; /* 32px — header và dải tab */
+  --spacing-status: 1.5rem; /* 24px — status bar */
+  --spacing-inspector: 18rem; /* 288px — cột inspector bên phải */
+
+  /* Widget tự viết (timeline, curve editor) — Pha 6-7. */
+  --color-timeline-track: #161616;
+  --color-timeline-ruler: #262626;
+  --color-timeline-playhead: #ff832b; /* Orange 40 */
+  --color-keyframe: #4589ff; /* Blue 50 */
+  --color-keyframe-selected: #f1c21b; /* Yellow 30 */
+  --color-curve-line: #42be65; /* Green 40 */
+  --color-curve-handle: #8d8d8d;
+  --color-curve-grid: #161616;
+  --color-canvas-checker-a: #0d0d0d;
+  --color-canvas-checker-b: #161616;
+  --color-draft-badge: #ff832b; /* Orange 40 — "chưa phải bản cuối" */
+  --spacing-track-h: 2.25rem;
+  --spacing-ruler-h: 1.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-ui);
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+
+  input, textarea {
+    user-select: text;
+  }
+
+  /*
+   * Focus kiểu Carbon: viền 2px đặc, không phải ring mờ. Ở công cụ dùng bàn phím nhiều,
+   * thấy rõ đang focus vào đâu quan trọng hơn là mềm mắt.
+   */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: -2px;
+  }
+
+  /* Số liệu: mono và KHÔNG nhảy chiều rộng khi giá trị đổi. */
+  .tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}

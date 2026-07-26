@@ -1,0 +1,362 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "SINH TỰ ĐỘNG từ schema/scene-config.ts — đừng sửa tay. Chạy `pnpm schema:gen`.",
+  "title": "3DQuickMock scene config v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "default": 1,
+      "type": "number",
+      "const": 1
+    },
+    "device": {
+      "default": "iphone-17-pro-max",
+      "type": "string",
+      "minLength": 1
+    },
+    "screen": {
+      "type": "string",
+      "minLength": 1
+    },
+    "render": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "engine": {
+          "default": "cycles",
+          "type": "string",
+          "enum": [
+            "cycles",
+            "eevee"
+          ]
+        },
+        "samples": {
+          "default": 48,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4096
+        },
+        "res": {
+          "default": [
+            1080,
+            1440
+          ],
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 8192
+            },
+            {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 8192
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        "fps": {
+          "default": 30,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 240
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 600
+        },
+        "frames": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 36000
+        },
+        "view_transform": {
+          "type": "string",
+          "enum": [
+            "AgX",
+            "Filmic",
+            "Standard",
+            "Khronos PBR Neutral"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "world": {
+      "type": "object",
+      "properties": {
+        "hdri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "strength": {
+          "default": 1,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "rotation": {
+          "default": 0,
+          "type": "number"
+        },
+        "reflector_strength": {
+          "default": 0,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "hdri"
+      ],
+      "additionalProperties": false
+    },
+    "camera": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "azimuth": {
+          "default": 0,
+          "type": "number"
+        },
+        "elevation": {
+          "default": 10,
+          "type": "number",
+          "minimum": -89,
+          "maximum": 89
+        },
+        "frame_fill": {
+          "default": 0.72,
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "focal": {
+          "default": 85,
+          "type": "number",
+          "minimum": 5,
+          "maximum": 500
+        },
+        "target_z_offset": {
+          "default": 0,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pose": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "spin_x": {
+          "default": 0,
+          "type": "number"
+        },
+        "spin_y": {
+          "default": 0,
+          "type": "number"
+        },
+        "spin_z": {
+          "default": 0,
+          "type": "number"
+        },
+        "ground": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "dir": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "default": "still",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "dir"
+      ],
+      "additionalProperties": false
+    },
+    "channels": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "camera.azimuth",
+          "camera.elevation",
+          "camera.distance",
+          "camera.focal",
+          "device.spin_x",
+          "device.spin_y",
+          "device.spin_z",
+          "world.hdri_rotation",
+          "world.strength"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "keyframes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "frame": {
+                  "type": "number"
+                },
+                "value": {
+                  "type": "number"
+                },
+                "interpolation": {
+                  "default": "BEZIER",
+                  "type": "string",
+                  "enum": [
+                    "CONSTANT",
+                    "LINEAR",
+                    "BEZIER",
+                    "SINE",
+                    "QUAD",
+                    "CUBIC",
+                    "QUART",
+                    "QUINT",
+                    "EXPO",
+                    "CIRC",
+                    "BACK",
+                    "BOUNCE",
+                    "ELASTIC"
+                  ]
+                },
+                "easing": {
+                  "default": "AUTO",
+                  "type": "string",
+                  "enum": [
+                    "AUTO",
+                    "EASE_IN",
+                    "EASE_OUT",
+                    "EASE_IN_OUT"
+                  ]
+                },
+                "handle_left": {
+                  "type": "object",
+                  "properties": {
+                    "frame": {
+                      "type": "number"
+                    },
+                    "value": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "default": "ALIGNED",
+                      "type": "string",
+                      "enum": [
+                        "FREE",
+                        "ALIGNED",
+                        "VECTOR",
+                        "AUTO",
+                        "AUTO_CLAMPED"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "frame",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                "handle_right": {
+                  "type": "object",
+                  "properties": {
+                    "frame": {
+                      "type": "number"
+                    },
+                    "value": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "default": "ALIGNED",
+                      "type": "string",
+                      "enum": [
+                        "FREE",
+                        "ALIGNED",
+                        "VECTOR",
+                        "AUTO",
+                        "AUTO_CLAMPED"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "frame",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "frame",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "extrapolation": {
+            "default": "CONSTANT",
+            "type": "string",
+            "enum": [
+              "CONSTANT",
+              "LINEAR"
+            ]
+          },
+          "modifiers": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "CYCLES",
+                    "NOISE",
+                    "STEPPED",
+                    "LIMITS"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "keyframes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "_comment": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "screen",
+    "world",
+    "output"
+  ],
+  "additionalProperties": false
+}

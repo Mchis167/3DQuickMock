@@ -1,0 +1,13 @@
+{
+  "screen": "a.png",
+  "world": { "hdri": "h.hdr" },
+  "output": { "dir": "renders/smoke" },
+  "render": { "duration": 5 },
+  "channels": {
+    "camera.azimuth": {
+      "keyframes": [
+        { "frame": 1, "value": 0, "interpolation": "CUBIC", "easing": "EASE_IN_OUT_QUINT" }
+      ]
+    }
+  }
+}

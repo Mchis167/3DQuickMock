@@ -1,0 +1,6 @@
+{
+  "screen": "assets/test/uv_test.png",
+  "world": { "hdri": "assets/hdri/studio_small_03.hdr" },
+  "pose": { "ground": "true" },
+  "output": { "dir": "renders/smoke" }
+}
